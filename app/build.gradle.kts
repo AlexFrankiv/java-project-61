@@ -1,7 +1,7 @@
 plugins {
-    id ("com.github.ben-manes.versions")
+    id("com.github.ben-manes.versions")
     application
-
+    id("org.sonarqube") version "6.3.1.5724"
 }
 
 group = "hexlet.code"
@@ -13,7 +13,12 @@ repositories {
 application {
     mainClass.set("hexlet.code.app")
 }
-
+sonar {
+    properties {
+        property("sonar.projectKey", "AlexFrankiv_java-project-61")
+        property("sonar.organization", "alexfrankiv")
+    }
+}
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")

@@ -1,2 +1,12 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/AlexFrankiv/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AlexFrankiv/java-project-61/actions)
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)
+![Gradle](https://img.shields.io/badge/Gradle-8.10-blue?logo=gradle)
+![Build](https://github.com/AlexFrankiv/java-project-61/actions/workflows/build.yml/badge.svg)
+![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=sqale_rating)
+![Reliability](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=reliability_rating)
+![Security](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=security_rating)
+![Bugs](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=bugs)
+![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=vulnerabilities)
+![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=code_smells)
+![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=AlexFrankiv_java-project-61&metric=sqale_index)

@@ -12,7 +12,7 @@ repositories {
     mavenCentral()
 }
 application {
-    mainClass.set("hexlet.code.app")
+    mainClass.set("hexlet.code.App")
 }
 sonar {
     properties {

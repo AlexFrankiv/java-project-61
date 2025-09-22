@@ -1,7 +1,9 @@
 package hexlet.code;
 
-import games.Even;
-import games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+
 import java.util.Scanner;
 
 public class App {
@@ -11,11 +13,15 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calculator");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
 
         String choice = sc.nextLine();
 
         switch (choice) {
+            case "4":
+                GCD.playGCD();
+                break;
             case "3":
                 Calc.play();
                 break;

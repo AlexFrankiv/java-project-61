@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -14,11 +15,15 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calculator");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
 
         String choice = sc.nextLine();
 
         switch (choice) {
+            case "5":
+                Progression.play();
+                break;
             case "4":
                 GCD.playGCD();
                 break;

@@ -17,7 +17,7 @@ public class Engine {
             System.out.print("Your answer: ");
             String userAnswer = sc.nextLine();
 
-            if (!userAnswer.equalsIgnoreCase(correctAnswers[i])) {
+            if (!userAnswer.equals(correctAnswers[i])) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + correctAnswers[i] + "'.");
                 System.out.println("Let's try again, " + userName + "!");

@@ -15,7 +15,7 @@ public class Even {
         String[] questions = new String[ROUNDS_COUNT];
         String[] answers = new String[ROUNDS_COUNT];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
             int number = generateRandomNumber();
             questions[i] = String.valueOf(number);
             answers[i] = isEven(number) ? "yes" : "no";

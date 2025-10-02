@@ -20,9 +20,9 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
-        String choice = sc.nextLine();
+        String userChoice = sc.nextLine();
 
-        switch (choice) {
+        switch (userChoice) {
             case "6":
                 Prime.play();
                 break;
@@ -45,6 +45,7 @@ public class App {
                 System.out.println("Goodbye!");
                 break;
             default:
+                throw new RuntimeException("Unknown user choice: " + userChoice);
         }
 
         sc.close();

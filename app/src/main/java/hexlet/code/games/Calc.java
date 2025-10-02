@@ -4,18 +4,17 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
-    private static final int ROUNDS_COUNT = 3;
-    private static final int MAX_NUMBER = 100;
+    private static final int MAX_NUMBER = 20;
     private static final int MIN_NUMBER = 1;
     private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void play() {
         String description = "What is the result of the expression?";
 
-        String[] questions = new String[ROUNDS_COUNT];
-        String[] answers = new String[ROUNDS_COUNT];
+        String[] questions = new String[Engine.ROUNDS_COUNT];
+        String[] answers = new String[Engine.ROUNDS_COUNT];
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String question = generateQuestion();
             questions[i] = question;
             answers[i] = String.valueOf(calculateAnswer(question));

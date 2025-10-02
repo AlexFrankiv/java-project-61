@@ -5,17 +5,16 @@ import java.util.Random;
 
 
 public class Even {
-    private static final int ROUNDS_COUNT = 3;
     private static final int MAX_NUMBER = 100;
     private static final int MIN_NUMBER = 1;
 
     public static void play() {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[] questions = new String[ROUNDS_COUNT];
-        String[] answers = new String[ROUNDS_COUNT];
+        String[] questions = new String[Engine.ROUNDS_COUNT];
+        String[] answers = new String[Engine.ROUNDS_COUNT];
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = generateRandomNumber();
             questions[i] = String.valueOf(number);
             answers[i] = isEven(number) ? "yes" : "no";

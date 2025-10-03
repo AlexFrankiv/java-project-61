@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Random;
 
 public class Calc {
@@ -11,49 +13,39 @@ public class Calc {
     public static void play() {
         String description = "What is the result of the expression?";
 
-        String[] questions = new String[Engine.ROUNDS_COUNT];
-        String[] answers = new String[Engine.ROUNDS_COUNT];
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            String question = generateQuestion();
-            questions[i] = question;
-            answers[i] = String.valueOf(calculateAnswer(question));
-        }
+            int firstNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int secondNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            char operator = generateRandomOperator();
 
-        Engine.runGame(description, questions, answers);
+            if (operator == '-' && firstNumber < secondNumber) {
+                int temp = firstNumber;
+                firstNumber = secondNumber;
+                secondNumber = temp;
+            }
+
+            String question = firstNumber + " " + operator + " " + secondNumber;
+            int answer = calculate(operator, firstNumber, secondNumber);
+
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = String.valueOf(answer);
+        }
+        Engine.runGame(description, questionsAndAnswers);
     }
 
-    private static String generateQuestion() {
+    private static char generateRandomOperator() {
         Random random = new Random();
-        int firstNumb = random.nextInt(MAX_NUMBER) + MIN_NUMBER;
-        int secondNumb = random.nextInt(MAX_NUMBER) + MIN_NUMBER;
-
-        char randomOperator = OPERATORS[random.nextInt(OPERATORS.length)];
-
-        if (randomOperator == '-' && firstNumb < secondNumb) {
-            int temp = firstNumb;
-            firstNumb = secondNumb;
-            secondNumb = temp;
-        }
-
-        return firstNumb + " " + randomOperator + " " + secondNumb;
+        return OPERATORS[random.nextInt(OPERATORS.length)];
     }
 
-    private static int calculateAnswer(String question) {
-        String[] parts = question.split(" ");
-        int first = Integer.parseInt(parts[0]);
-        char operator = parts[1].charAt(0);
-        int second = Integer.parseInt(parts[2]);
-
-        switch (operator) {
-            case '+':
-                return first + second;
-            case '-':
-                return first - second;
-            case '*':
-                return first * second;
-            default:
-                return 0;
-        }
+    private static int calculate(char operator, int number1, int number2) {
+        return switch (operator) {
+            case '+' -> number1 + number2;
+            case '-' -> number1 - number2;
+            case '*' -> number1 * number2;
+            default -> throw new RuntimeException("Unknown operator: " + operator);
+        };
     }
 }

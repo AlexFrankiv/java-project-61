@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
 
 public class Progression {
     private static final int MIN_LENGTH = 5;
@@ -12,13 +11,12 @@ public class Progression {
     private static final int MAX_START = 20;
     private static final int MIN_STEP = 1;
     private static final int MAX_STEP = 10;
+    private static final int MIN_INDEX = 0;
 
     public static void play() {
         String description = "What number is missing in the progression?";
 
         String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
-
-        Random random = new Random();
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int length = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);
@@ -26,7 +24,7 @@ public class Progression {
             int step = Utils.generateNumber(MIN_STEP, MAX_STEP);
 
             String[] progression = makeProgression(start, step, length);
-            int hiddenIndex = random.nextInt(length);
+            int hiddenIndex = Utils.generateNumber(MIN_INDEX, length - 1);
             String answer = progression[hiddenIndex];
 
             progression[hiddenIndex] = "..";

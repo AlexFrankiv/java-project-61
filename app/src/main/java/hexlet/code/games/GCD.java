@@ -26,6 +26,6 @@ public class GCD {
             b = a % b;
             a = temp;
         }
-    return a;
+        return a;
     }
 }
